@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiusScent | Pilihan Aroma Terbaik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">RiusScent</div>
+        <div id="real-time-clock"></div> 
+        <nav> 
+            <a href="#home">Beranda</a>
+            <a href="#products">Produk</a>
+            <a href="#checkout" id="cart-icon">🛒 (<span id="cart-count">0</span>)</a>
+            <a href="#history">Riwayat Pesanan</a>
+        </nav>
+    </header>
+
+    <!-- Section Home/Beranda -->
+    <section id="home">
+        <h1>Welcome to RiusScent</h1>
+    </section>
+
+    <main id="products">
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">Semua</button>
+            <button class="filter-btn" data-category="lokal">Brand Indonesia (Lokal)</button>
+            <button class="filter-btn" data-category="timurtengah">Brand Timur Tengah</button>
+            <button class="filter-btn" data-category="designer">Designer</button>
+            <button class="filter-btn" data-category="niche">Niche</button>
+        </div>
+
+        <div class="product-list" id="product-list">
+        </div>
+    </main>
+    
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>🛒 Keranjang Belanja</h2>
+            <div id="cart-items" class="cart-items-container">
+                <p id="empty-cart-message">Keranjang Anda masih kosong.</p>
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">Rp 0</span></p>
+            </div>
+            <form id="checkout-form">
+                <h3>Detail Pengiriman & Pembayaran</h3>
+                <label for="name">Nama Lengkap:</label>
+                <input type="text" id="name" required>
+                <label for="contact">Email/No. HP (untuk riwayat pesanan):</label>
+                <input type="text" id="contact" placeholder="Contoh: user@mail.com atau 0812xxxxxx" required>
+                <label for="payment-method">Metode Pembayaran (E-Wallet & M-Banking):</label>
+                <select id="payment-method" required>
+                    <option value="">Pilih Metode</option>
+                    <option value="ewallet_dana">E-Wallet (Dana)</option>
+                    <option value="ewallet_gopay">E-Wallet (GoPay)</option>
+                    <option value="mbanking_bca">M-Banking (BCA)</option>
+                    <option value="mbanking_mandiri">M-Banking (Mandiri)</option>
+                </select>
+                <button type="submit" class="checkout-btn">Proses Pembayaran</button>
+            </form>
+            <small>⚠️ Fitur ini hanya simulasi. Integrasi pembayaran nyata memerlukan Backend Server.</small>
+        </div>
+    </div>
+
+    <section id="history">
+        <h2 style="text-align: center; margin-top: 30px;">📄 Riwayat Pesanan & Format Pesanan</h2>
+        <p style="text-align: center; margin-bottom: 20px;">Riwayat pesanan transaksi yang berhasil (SIMULASI):</p>
+        <div id="order-history-list" class="order-history-container">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 RiusScent. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
